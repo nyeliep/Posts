@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         val apiClient = ApiClient.buildClient(ApiInterface::class.java)
         val request = apiClient.getPosts()
 
-        request.enqueue(object : Callback<List<Post>!>! {
+        request.enqueue(object : Callback<List<Post>> {
             override fun onResponse(call: Call<List<Post>>, response: Response<List<Post>>) {
                 if (response.isSuccessful) {
                     val posts = response.body()
